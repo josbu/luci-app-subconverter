@@ -1,27 +1,11 @@
-
 port: 7890
-
 socks-port: 7891
-
-
 allow-lan: true
-
-
 mode: Rule
-
 log-level: info
-
 external-controller: '127.0.0.1:9090'
-
-
-
 experimental:
   ignore-resolve-fail: true # 忽略 DNS 解析失败，默认值为 true
-
-
-
-
-
 Proxy:
   - name: Shadowsocks
     type: socks5
@@ -34,17 +18,12 @@ Proxy Group:
       - Shadowsocks
 Rule:
   - 'MATCH,DIRECT'
-
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
-
 cfw-conn-break-strategy:
   proxy: none # none/chain/all
   profile: true # true/false
   mode: false # true/false
-
-
-
 cfw-bypass-bak:
   - qq.com
   - 'music.163.com' # 网易云域名1

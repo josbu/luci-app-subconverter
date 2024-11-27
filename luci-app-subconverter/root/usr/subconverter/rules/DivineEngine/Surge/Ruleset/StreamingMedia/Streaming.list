@@ -1,11 +1,9 @@
-
 DOMAIN-SUFFIX,ext-twitch.tv
 DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,ttvnw.net
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,twitchcdn.net
 DOMAIN-SUFFIX,twitch-ext.rootonline.de
-
 USER-AGENT,Deezer*
 DOMAIN-SUFFIX,deezer.com
 DOMAIN-SUFFIX,dzcdn.net
@@ -33,12 +31,10 @@ USER-AGENT,TIDAL*
 DOMAIN-SUFFIX,tidal.com
 USER-AGENT,com.google.ios.youtubemusic*
 USER-AGENT,YouTubeMusic*
-
 USER-AGENT,Himalaya*
 DOMAIN-SUFFIX,himalaya.com
 USER-AGENT,Overcast*
 DOMAIN-SUFFIX,overcast.fm
-
 USER-AGENT,AbemaTV*
 DOMAIN-SUFFIX,abema.io
 DOMAIN-SUFFIX,abema.tv

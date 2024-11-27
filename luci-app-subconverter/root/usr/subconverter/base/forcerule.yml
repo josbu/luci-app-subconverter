@@ -1,18 +1,9 @@
 port: 7890
-
 socks-port: 7891
-
-
 allow-lan: true
-
 mode: Rule
-
 log-level: info
-
 external-controller: 127.0.0.1:9090
-
-
-
 dns:
   enable: false
   listen: 0.0.0.0:53
@@ -22,9 +13,6 @@ dns:
    - 119.29.29.29
    - 114.114.114.114
    - 223.5.5.5
-
-
-
 Proxy:
 - name: "1"
   type: ss
@@ -32,7 +20,6 @@ Proxy:
   port: 443
   cipher: chacha20-ietf-poly1305
   password: "password"
-
 - name: "2"
   type: ss
   server: 1.2.4.8
@@ -42,7 +29,6 @@ Proxy:
   plugin: obfs
   plugin-opts:
     mode: tls # or http
-
 - name: "3"
   type: ss
   server: 1.2.4.8
@@ -52,7 +38,6 @@ Proxy:
   plugin: v2ray-plugin
   plugin-opts:
     mode: websocket # no QUIC now
-
 - name: "4"
   type: vmess
   server: v2ray.cool
@@ -60,8 +45,6 @@ Proxy:
   uuid: a3482e88-686a-4a58-8126-99c9df64b7bf
   alterId: 64
   cipher: auto
-
-
 Proxy Group:
 - { name: "Proxy", type: select, proxies: ["1", "2", "3","4"] }
 - { name: "google", type: select, proxies: ["Proxy","1", "2", "3","4"] }
@@ -76,9 +59,7 @@ Proxy Group:
 - { name: "屏蔽广告", type: select, proxies: ["REJECT","网易解锁", "DIRECT"] }
 - { name: "UnblockNeteaseMusic", type: select, proxies: ["网易解锁"] }
 - { name: "Telegram", type: select, proxies: ["Proxy"] }
-
 Rule:
-
 - DOMAIN-KEYWORD,netease,UnblockNeteaseMusic
 - DOMAIN-SUFFIX,music.126.net,UnblockNeteaseMusic
 - DOMAIN-SUFFIX,163.com,UnblockNeteaseMusic
@@ -239,7 +220,6 @@ Rule:
 - DOMAIN-SUFFIX,zlne800.com,屏蔽广告
 - DOMAIN-SUFFIX,zunmi.cn,屏蔽广告
 - DOMAIN-SUFFIX,zzd6.com,屏蔽广告
-
 - DOMAIN-SUFFIX,kuaizip.com,屏蔽广告
 - DOMAIN-SUFFIX,mackeeper.com,屏蔽广告
 - DOMAIN-SUFFIX,flash.cn,屏蔽广告
@@ -299,11 +279,9 @@ Rule:
 - DOMAIN-SUFFIX,yuanchengxiezuo.com,屏蔽广告
 - DOMAIN-SUFFIX,zbrushcn.com,屏蔽广告
 - DOMAIN-SUFFIX,zhzzx.com,屏蔽广告
-
 - DOMAIN-KEYWORD,adservice,屏蔽广告
 - DOMAIN-KEYWORD,analytics,屏蔽广告
 - DOMAIN-KEYWORD,analysis,屏蔽广告
-
 - DOMAIN,42trck.com,屏蔽广告
 - DOMAIN,51.la,屏蔽广告
 - DOMAIN,adcolony.com,屏蔽广告
@@ -372,7 +350,6 @@ Rule:
 - DOMAIN,vungle.com,屏蔽广告
 - DOMAIN,wedolook.com,屏蔽广告
 - DOMAIN,xdrig.com,屏蔽广告
-
 - DOMAIN,ad.daum.net,屏蔽广告
 - DOMAIN,track.xiachufang.com,屏蔽广告
 - DOMAIN,abema-adx.ameba.jp,屏蔽广告
@@ -415,7 +392,6 @@ Rule:
 - DOMAIN,trackapp.guahao.cn,屏蔽广告
 - DOMAIN,traffic.mogujie.com,屏蔽广告
 - DOMAIN,wmlog.meituan.com,屏蔽广告
-
 - DOMAIN,adshow.58.com,屏蔽广告
 - DOMAIN,track.58.com,屏蔽广告
 - DOMAIN,tracklog.58.com,屏蔽广告
@@ -432,13 +408,10 @@ Rule:
 - DOMAIN,adashx4yt.m.taobao.com,屏蔽广告
 - DOMAIN,nbsdk-baichuan.alicdn.com,屏蔽广告
 - DOMAIN,tunion-api.m.taobao.com,屏蔽广告
-
 - DOMAIN,adproxy.autohome.com.cn,屏蔽广告
 - DOMAIN,rd.autohome.com.cn,屏蔽广告
 - DOMAIN,al.autohome.com.cn,屏蔽广告
 - DOMAIN,applogapi.autohome.com.cn,屏蔽广告
-
-
 - DOMAIN,baidustatic.com,屏蔽广告
 - DOMAIN,cpro.baidu.com,屏蔽广告
 - DOMAIN,pos.baidu.com,屏蔽广告
@@ -450,26 +423,20 @@ Rule:
 - DOMAIN,mobads.baidu.com,屏蔽广告
 - DOMAIN,mobads-logs.baidu.com,屏蔽广告
 - DOMAIN,nsclick.baidu.com,屏蔽广告
-
 - DOMAIN,applog.musical.ly,屏蔽广告
 - DOMAIN,track.toutiao.com,屏蔽广告
 - DOMAIN,xlog.snssdk.com,屏蔽广告
 - DOMAIN,xlog-va.byteoversea.com,屏蔽广告
-
 - DOMAIN,adx.yiche.com,屏蔽广告
 - DOMAIN,log.ycapp.yiche.com,屏蔽广告
 - DOMAIN,advertise.baicizhan.org,屏蔽广告
 - DOMAIN,advertise.baicizhan.com,屏蔽广告
-
-
 - DOMAIN,galaxy.bjcathay.com,屏蔽广告
 - DOMAIN,mdrecv.app.cntvwb.cn,屏蔽广告
 - DOMAIN,sdapprecv.app.cntvwb.cn,屏蔽广告
 - DOMAIN,vdapprecv.app.cntvwb.cn,屏蔽广告
-
 - DOMAIN,admarket.21cn.com,屏蔽广告
 - DOMAIN,adshows.21cn.com,屏蔽广告
-
 - DOMAIN,atrace.chelaile.net.cn,屏蔽广告
 - DOMAIN,logs.chelaile.net.cn,屏蔽广告
 - DOMAIN,doubleclick.net,屏蔽广告
@@ -823,7 +790,6 @@ Rule:
 - DOMAIN,rlogs.youdao.com,屏蔽广告
 - DOMAIN,static.flv.uuzuonline.com,屏蔽广告
 - DOMAIN,wanproxy.127.net,屏蔽广告
-
 - DOMAIN,10up.com,屏蔽广告
 - DOMAIN,111cn.net,屏蔽广告
 - DOMAIN,114la.com,屏蔽广告
@@ -1206,8 +1172,6 @@ Rule:
 - DOMAIN,xiongdong.com,屏蔽广告
 - DOMAIN,519397.com,屏蔽广告
 - DOMAIN,twh5.com,屏蔽广告
-
-
 - DOMAIN,a.ckm.iqiyi.com,屏蔽广告
 - DOMAIN,ad.m.iqiyi.com,屏蔽广告
 - DOMAIN,afp.iqiyi.com,屏蔽广告
@@ -1230,7 +1194,6 @@ Rule:
 - IP-CIDR,101.227.200.28/32,屏蔽广告 
 - IP-CIDR,101.227.97.240/32,屏蔽广告 
 - IP-CIDR,124.192.153.42/32,屏蔽广告 
-
 - DOMAIN,click.hunantv.com,屏蔽广告
 - DOMAIN,da.hunantv.com,屏蔽广告
 - DOMAIN,da.mgtv.com,屏蔽广告
@@ -1238,7 +1201,6 @@ Rule:
 - DOMAIN,log.v2.hunantv.com,屏蔽广告
 - DOMAIN,res.hunantv.com,屏蔽广告
 - DOMAIN,v2.log.hunantv.com,屏蔽广告
-
 - DOMAIN,actives.youku.com,屏蔽广告
 - DOMAIN,ad.api.3g.youku.com,屏蔽广告
 - DOMAIN,ad.api.mobile.youku.com,屏蔽广告
@@ -1294,7 +1256,6 @@ Rule:
 - IP-CIDR,223.87.182.102/32,屏蔽广告 
 - IP-CIDR,223.87.182.11/32,屏蔽广告 
 - IP-CIDR,223.87.182.52/32,屏蔽广告 
-
 - DOMAIN,api.game.letvstore.com,屏蔽广告
 - DOMAIN,ark.letv.com,屏蔽广告
 - DOMAIN,dc.letv.com,屏蔽广告
@@ -1308,8 +1269,6 @@ Rule:
 - DOMAIN,stat.letv.com,屏蔽广告
 - DOMAIN,static.app.m.letv.com,屏蔽广告
 - DOMAIN,webp2p.letv.com,屏蔽广告
-
-
 - DOMAIN,adnet.sohu.com,屏蔽广告
 - DOMAIN,ads.sohu.com,屏蔽广告
 - DOMAIN,aty.sohu.com,屏蔽广告
@@ -1324,7 +1283,6 @@ Rule:
 - DOMAIN,theta.sogoucdn.com,屏蔽广告
 - DOMAIN,uranus.sogou.com,屏蔽广告
 - DOMAIN,v2.reachmax.cn,屏蔽广告
-
 - DOMAIN,ads.aplus.pptv.com,屏蔽广告
 - DOMAIN,afp.pplive.com,屏蔽广告
 - DOMAIN,asimgs.pplive.cn,屏蔽广告
@@ -1332,12 +1290,10 @@ Rule:
 - DOMAIN,jp.as.pptv.com,屏蔽广告
 - DOMAIN,pp2.pptv.com,屏蔽广告
 - DOMAIN,stat.pptv.com,屏蔽广告
-
 - DOMAIN,deliver.ifeng.com,屏蔽广告
 - DOMAIN,hxjs.tool.hexun.com,屏蔽广告
 - DOMAIN,hxsame.hexun.com,屏蔽广告
 - DOMAIN,itv.hexun.com,屏蔽广告
-
 - DOMAIN,ad.cmvideo.cn,屏蔽广告
 - DOMAIN,atm.cp31.ott.cibntv.net,屏蔽广告
 - DOMAIN,aty.cp45.ott.cibntv.net,屏蔽广告
@@ -1348,7 +1304,6 @@ Rule:
 - DOMAIN,iadctest.qwapi.com,屏蔽广告
 - DOMAIN,log.moviebox.baofeng.com,屏蔽广告
 - DOMAIN,logger.baofeng.com,屏蔽广告
-
 - DOMAIN,ad.video.51togic.com,屏蔽广告
 - DOMAIN,ads.cdn.tvb.com,屏蔽广告
 - DOMAIN,biz5.kankan.com,屏蔽广告
@@ -1495,7 +1450,6 @@ Rule:
 - DOMAIN-SUFFIX,googlevideo.com,google
 - DOMAIN-SUFFIX,youtube.com,google
 - DOMAIN,youtubei.googleapis.com,google
-
 - DOMAIN-SUFFIX,deezer.com,Global_media
 - DOMAIN-SUFFIX,dzcdn.net,Global_media
 - DOMAIN-SUFFIX,kkbox.com,Global_media
@@ -1509,8 +1463,6 @@ Rule:
 - DOMAIN-SUFFIX,spoti.fi,Global_media
 - IP-CIDR,35.186.224.47/32,Global_media
 - DOMAIN-SUFFIX,tidal.com,Global_media
-
-
 - DOMAIN-SUFFIX,appspot.com,google
 - DOMAIN-SUFFIX,blogger.com,google
 - DOMAIN-SUFFIX,getoutline.org,google
@@ -1862,7 +1814,6 @@ Rule:
 - DOMAIN-KEYWORD,pinterest,Proxy
 - DOMAIN-KEYWORD,porn,Proxy
 - DOMAIN-KEYWORD,wikileaks,Proxy
-
 - DOMAIN-SUFFIX,apartmentratings.com,Proxy
 - DOMAIN-SUFFIX,apartments.com,Proxy
 - DOMAIN-SUFFIX,bankmobilevibe.com,Proxy
@@ -1910,7 +1861,6 @@ Rule:
 - DOMAIN-SUFFIX,vsco.co,Proxy
 - DOMAIN-SUFFIX,xfinity.com,Proxy
 - DOMAIN-SUFFIX,zattoo.com,Proxy
-
 - DOMAIN,testflight.apple.com,Apple
 - DOMAIN-SUFFIX,appsto.re,Apple
 - DOMAIN,books.itunes.apple.com,Apple
@@ -2112,7 +2062,6 @@ Rule:
 - DOMAIN-SUFFIX,windows.com,DIRECT
 - DOMAIN-SUFFIX,windowsupdate.com,DIRECT
 - DOMAIN,officecdn-microsoft-com.akamaized.net,DIRECT
-
 - DOMAIN-SUFFIX,sina.com,DIRECT
 - DOMAIN-SUFFIX,weibo.com,DIRECT
 - DOMAIN-SUFFIX,weibocdn.com,DIRECT
@@ -2291,7 +2240,6 @@ Rule:
 - DOMAIN-SUFFIX,zhimg.com,DIRECT
 - DOMAIN-SUFFIX,zhuihd.com,DIRECT
 - DOMAIN,download.jetbrains.com,DIRECT
-
 - DOMAIN-SUFFIX,aaplimg.com,Apple
 - DOMAIN-SUFFIX,apple.co,Apple
 - DOMAIN-SUFFIX,apple.com,Apple
@@ -2304,15 +2252,11 @@ Rule:
 - DOMAIN-SUFFIX,mzstatic.com,Apple
 - DOMAIN,www-cdn.icloud.com.akadns.net,Apple
 - IP-CIDR,17.0.0.0/8,Apple
-
 - IP-CIDR,192.168.0.0/16,DIRECT
 - IP-CIDR,10.0.0.0/8,DIRECT
 - IP-CIDR,172.16.0.0/12,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT
 - IP-CIDR,100.64.0.0/10,DIRECT
-
-
-
 - DOMAIN-KEYWORD,amazon,美区影视
 - DOMAIN-KEYWORD,google,google
 - DOMAIN-KEYWORD,gmail,google
@@ -2327,7 +2271,6 @@ Rule:
 - DOMAIN-KEYWORD,blogspot,Proxy
 - DOMAIN-SUFFIX,youtu.be,google
 - DOMAIN-KEYWORD,whatsapp,Proxy
-
 - DOMAIN-SUFFIX,9to5mac.com,Proxy
 - DOMAIN-SUFFIX,abpchina.org,Proxy
 - DOMAIN-SUFFIX,adblockplus.org,Proxy
@@ -2633,7 +2576,6 @@ Rule:
 - DOMAIN-SUFFIX,ying.com,Proxy
 - DOMAIN-SUFFIX,yoyo.org,Proxy
 - DOMAIN-SUFFIX,ytimg.com,Proxy
-
 - DOMAIN-SUFFIX,telegra.ph,Proxy
 - DOMAIN-SUFFIX,telegram.org,Proxy
 - IP-CIDR,91.108.56.0/22,Proxy
@@ -2642,7 +2584,6 @@ Rule:
 - IP-CIDR,109.239.140.0/24,Proxy
 - IP-CIDR,149.154.160.0/20,Proxy
 - IP-CIDR,149.154.164.0/22,Proxy
-
 - DOMAIN-SUFFIX,local,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT
 - IP-CIDR,172.16.0.0/12,DIRECT
@@ -2651,15 +2592,8 @@ Rule:
 - IP-CIDR,17.0.0.0/8,DIRECT
 - IP-CIDR,100.64.0.0/10,DIRECT
 - DOMAIN-SUFFIX,vd.l.qq.com,Domestic
-
 - DOMAIN-SUFFIX,analytics.strava.com,DIRECT
-
-
 - DOMAIN,vd.l.qq.com,DIRECT
-
 - DOMAIN,analytics.strava.com,DIRECT
-
-
-
 - GEOIP,CN,Domestic
 - MATCH,Final

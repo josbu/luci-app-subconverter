@@ -1,6 +1,5 @@
 USER-AGENT,*youtube*
 USER-AGENT,YouTube*
-
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,video.google.com
