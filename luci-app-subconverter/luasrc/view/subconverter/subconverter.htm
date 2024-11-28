@@ -40,11 +40,11 @@ local function update_port(port)
 end
 
 local function start_service()
-  luci.sys.exec("/etc/init.d/subconverter start && /etc/init.d/subconverter enable")
+  luci.sys.exec("/etc/init.d/subconverter start ; /etc/init.d/subconverter enable")
 end
 
 local function stop_service()
-  luci.sys.exec("/etc/init.d/subconverter stop && /etc/init.d/subconverter disable")
+  luci.sys.exec("/etc/init.d/subconverter stop ; /etc/init.d/subconverter disable")
 end
 
 if luci.http.formvalue("data") then
