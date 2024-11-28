@@ -2,9 +2,11 @@
 local text = luci.sys.exec("cat /usr/subconverter/pref.ini")
 
 if luci.http.formvalue("save") then
-    luci.sys.exec("echo '" .. luci.http.formvalue("text") .. "' > /usr/subconverter/pref.ini")
-    luci.sys.exec("chmod 644 /usr/subconverter/pref.ini")
-    luci.sys.exec("chown root:root /usr/subconverter/pref.ini")
+    local file = io.open("/usr/subconverter/pref.ini", "w")
+    if file then
+        file:write(luci.http.formvalue("text"))
+        file:close()
+    end
     luci.http.redirect(luci.dispatcher.build_url("admin", "services", "subconverter/prefini"))
     return
 end
