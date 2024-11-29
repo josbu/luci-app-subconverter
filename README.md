@@ -11,6 +11,11 @@ This project is based on the following open-source projects:
 
 A luci-app for subweb and subconverter on OpenWRT
 
+# Screenshot
+
+![subconverter](./img/subconverter.png)
+![prefini](./img/prefini.png)
+
 ## Features
 
 * Supports arm64 devices only
@@ -41,5 +46,5 @@ If you still don't trust the provided binary file, you can compile your ipk with
 
 * Optimize disk usage further
 * Add password protection for enhanced security
-* Implement configuration editing capabilities
+* ~Implement configuration editing capabilities~
 * ~Add crontab to schedule start and stop~
