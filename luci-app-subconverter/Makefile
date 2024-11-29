@@ -24,14 +24,14 @@ endef
 
 define Package/$(PKG_NAME)/postinst
     #!/bin/sh
-    chmod 755 /usr/subconverter/subconverter
+    chmod 755 /etc/subconverter/subconverter
 endef
 
 define Package/$(PKG_NAME)/prerm
     #!/bin/sh
     crontab -l | grep -v '/etc/init.d/subconverter' | crontab -
     killall -q subconverter
-    rm -rf /usr/subconverter
+    rm -rf /etc/subconverter
 endef
 
 
@@ -46,7 +46,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/luasrc/view/subconverter/subconverter.htm $(1)/usr/lib/lua/luci/view/subconverter
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/luasrc/view/subconverter/prefini.htm $(1)/usr/lib/lua/luci/view/subconverter
 	
-	$(CP) -r $(PKG_BUILD_DIR)/root/usr/subconverter $(1)/usr/
+	$(CP) -r $(PKG_BUILD_DIR)/root/etc/subconverter $(1)/etc/
 	
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/root/etc/init.d/subconverter $(1)/etc/init.d/
 endef
