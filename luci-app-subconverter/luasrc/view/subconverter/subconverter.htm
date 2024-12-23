@@ -60,6 +60,18 @@ if luci.http.formvalue("status") then
   return
 end
 
+if luci.http.formvalue("start") then
+  luci.sys.exec("/etc/init.d/subconverter start")
+  luci.http.redirect(luci.dispatcher.build_url("admin", "services", "subconverter/subconverter"))
+  return
+end
+
+if luci.http.formvalue("stop") then
+  luci.sys.exec("/etc/init.d/subconverter stop")
+  luci.http.redirect(luci.dispatcher.build_url("admin", "services", "subconverter/subconverter"))
+  return
+end
+
 if luci.http.formvalue("settings") then
   if luci.http.formvalue("enable") == "on" then
     if luci.http.formvalue("schedule") == "on" then
@@ -130,6 +142,8 @@ end
     </div>
     <div class="cbi-page-actions">
       <input class="cbi-button cbi-button-apply important" type="submit" value="Apply"/>
+      <button class="cbi-button cbi-button-save" onclick="location.href='?start'; return false;"><i class="icon-play"></i> Start</button>
+      <button class="cbi-button cbi-button-reset" onclick="location.href='?stop'; return false;"><i class="icon-stop"></i> Stop</button>
     </div>
   </form>
 </div>
