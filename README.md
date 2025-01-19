@@ -4,8 +4,8 @@
 
 This project is based on the following open-source projects:
 
-* [Subweb](https://github.com/stilleshan/subweb) (latest version, modified to minimize disk usage)
-* [Subconverter](https://github.com/tindy2013/subconverter) (version 0.9.0, compressed binary, deleted unnecessary files)
+* [Subweb](https://github.com/stilleshan/subweb) (latest version, rewrite to minimize disk usage)
+* [Subconverter](https://github.com/tindy2013/subconverter) (latest, compressed binary, deleted unnecessary files)
 
 ## Overview
 
@@ -15,11 +15,11 @@ A luci-app for subweb and subconverter on OpenWRT
 
 ![subconverter](./img/subconverter.png)
 ![prefini](./img/prefini.png)
-
+![subweb](./img/subweb.png)
 ## Features
 
-* Supports arm64 devices only
-* Tested on official OpenWRT 23.0.5, should be compatible with all arm64 devices running OpenWRT
+* Supports amd64 and arm64 devices only
+* Tested on official OpenWRT 23.0.5, should be compatible with all amd64 and arm64 devices running OpenWRT
 
 ## System Requirements
 
@@ -44,7 +44,7 @@ If you still don't trust the provided binary file, you can compile your ipk with
 
 ## Todo List
 
-* Optimize disk usage further
+* ~Optimize disk usage further
 * Add password protection for enhanced security
 * ~Implement configuration editing capabilities~
 * ~Add crontab to schedule start and stop~
