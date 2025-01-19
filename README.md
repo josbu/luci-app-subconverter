@@ -44,7 +44,7 @@ If you still don't trust the provided binary file, you can compile your ipk with
 
 ## Todo List
 
-* ~Optimize disk usage further
+* ~Optimize disk usage further~
 * Add password protection for enhanced security
 * ~Implement configuration editing capabilities~
 * ~Add crontab to schedule start and stop~
