@@ -12,7 +12,7 @@ define Package/$(PKG_NAME)
 	PKGARCH:=all
 	SUBMENU:=3. Applications
 	TITLE:=Subconverter
-	DEPENDS:=+luci-base +luci
+	DEPENDS:=+luci-base +luci +luci-compat
 endef
 
 define Package/$(PKG_NAME)/description
