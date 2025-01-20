@@ -23,7 +23,7 @@ A luci-app for subweb and subconverter on OpenWRT
 
 ## System Requirements
 
-* Disk space: approximately 10MB
+* Disk space: approximately 8MB
 * Memory: 512MB recommended, 256MB may be sufficient without other resource-intensive services
 
 ## Security Notice
