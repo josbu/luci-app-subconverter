@@ -4,8 +4,8 @@
 
 This project is based on the following open-source projects:
 
-* [Subweb](https://github.com/stilleshan/subweb) (latest version, rewrite to minimize disk usage)
-* [Subconverter](https://github.com/tindy2013/subconverter) (latest, compressed binary, deleted unnecessary files)
+* [Subweb](https://github.com/stilleshan/subweb)
+* [Subconverter](https://github.com/tindy2013/subconverter)
 
 ## Overview
 
