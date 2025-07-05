@@ -19,7 +19,7 @@ A luci-app for subweb and subconverter on OpenWRT
 ## Features
 
 * Supports amd64 and arm64 devices only
-* Tested on official OpenWRT 23.0.5, should be compatible with all amd64 and arm64 devices running OpenWRT
+* Tested on official OpenWRT 23.0.5 and LEDE R23.4.1, should be compatible with all amd64 and arm64 devices running OpenWRT
 
 ## System Requirements
 
