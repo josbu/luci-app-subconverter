@@ -19,7 +19,7 @@ a control panel for subweb and subconverter
 ## Features
 
 * Supports amd64 and arm64 devices
-* Tested on official OpenWRT 23.0.5 and LEDE R23.4.1/R20.4.8
+* Tested on official OpenWRT 23.05.5/24.10.2 and LEDE R23.4.1/R20.4.8
 
 ## System Requirements
 
