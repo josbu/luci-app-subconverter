@@ -102,13 +102,13 @@ end
 </style>
 <div>
   <h2><a id="subconverter" target="_blank">Subconverter</a></h2>
-  <div class="cbi-map-descr">luci-app-subconverter is an luci-app for <a target="_blank" href="https://github.com/stilleshan/subweb">subweb</a> and <a target="_blank" href="https://github.com/tindy2013/subconverter">subconverter</a>. see the <a target="_blank" href="https://github.com/0x2196f3/luci-app-subconverter">source code</a></div>
-  <div class="cbi-value">
-    <label class="cbi-value-title">Status</label>
-    <span id="service-status" ></span>
-  </div>
+  <div class="cbi-map-descr">luci-app-subconverter is a control panel for <a target="_blank" href="https://github.com/stilleshan/subweb">subweb</a> and <a target="_blank" href="https://github.com/asdlokj1qpi233/subconverter">subconverter</a>. see the <a target="_blank" href="https://github.com/0x2196f3/luci-app-subconverter">source code</a></div>
   <form method="POST">
     <input type="hidden" name="settings" value="on">
+    <div class="cbi-value">
+      <label class="cbi-value-title">Status</label>
+      <span id="service-status" ></span>
+    </div>
     <div class="cbi-checkbox cbi-value">
       <label for="checkbox-enable" class="cbi-value-title">Enable</label>
       <input type="checkbox" id="checkbox-enable" name="enable" class="cbi-value-field" />
@@ -135,15 +135,15 @@ end
       </div>
     </div>
     <div class="cbi-value">
-      <label class="cbi-value-title" for="input-port">Service Port</label>
+      <label for="input-port" class="cbi-value-title">Service Port</label>
 		  <div class="cbi-value-field">
 	      <input id="input-port" name="port" type="number" min="1" max="65535" class="cbi-input-text">
       </div>
     </div>
     <div class="cbi-page-actions">
       <input class="cbi-button cbi-button-apply important" type="submit" value="Apply"/>
-      <button class="cbi-button cbi-button-save" onclick="location.href='?start'; return false;"><i class="icon-play"></i> Start</button>
-      <button class="cbi-button cbi-button-reset" onclick="location.href='?stop'; return false;"><i class="icon-stop"></i> Stop</button>
+      <button class="cbi-button cbi-button-save" onclick="location.href='?start'; return false;"><i class="icon-play"></i>Start</button>
+      <button class="cbi-button cbi-button-reset" onclick="location.href='?stop'; return false;"><i class="icon-stop"></i>Stop</button>
     </div>
   </form>
 </div>
@@ -156,20 +156,17 @@ end
     
     checkboxEnable.addEventListener('change', function () {
         if (checkboxEnable.checked) {
-          containerCheckboxSchedule.style.display = 'flex';
-          checkboxSchedule.dispatchEvent(new Event('change'));
+          containerCheckboxSchedule.style.display = '';
         } else {
           containerCheckboxSchedule.style.display = 'none';
-          containerSchedule.style.display = 'none';
         }
+        checkboxSchedule.dispatchEvent(new Event('change'));
     });
     checkboxSchedule.addEventListener('change', function () {
-        if (checkboxSchedule.checked) containerSchedule.style.display = 'flex';
+        if (checkboxSchedule.checked) containerSchedule.style.display = '';
         else containerSchedule.style.display = 'none';
     });
   });
-</script>
-<script>
   function update_status() {
     fetch('?status')
       .then(response => response.text())
@@ -201,17 +198,16 @@ end
           
           if (enabled == "enabled" || scheduledTime !== 'nil') {
             checkboxEnable.checked = true;
-            checkboxEnable.dispatchEvent(new Event('change'));
           }
           if (scheduledTime !== 'nil') {
             checkboxSchedule.checked = true;
-            checkboxSchedule.dispatchEvent(new Event('change'));
             document.getElementById("select-schedule").value = scheduledTime;
           }
+          checkboxEnable.dispatchEvent(new Event('change'));
       })
       .catch(error => console.error('Error:', error));
   }
-  setTimeout(update_data, 10);
+  setTimeout(update_data, 200);
   setTimeout(update_status, 2000);
 </script>
 <%+footer%>

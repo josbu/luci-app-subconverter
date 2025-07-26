@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-subconverter
-PKG_VERSION:=1.3
+PKG_VERSION:=1.4
 PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk
@@ -16,7 +16,7 @@ define Package/$(PKG_NAME)
 endef
 
 define Package/$(PKG_NAME)/description
-	A luci-app for subweb and subconverter on OpenWRT
+	a control panel for subweb and subconverter
 endef
 
 define Build/Compile
